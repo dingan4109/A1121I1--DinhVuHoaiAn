@@ -1,0 +1,15 @@
+
+BEGIN 
+INPUT điểm
+IF điểm <= 100 AND điểm >= 0
+	IF điểm >= 75 THEN DISPLAY “Loại A”
+	END IF
+	ELSE 	IF điểm >= 60 THEN DISPLAY “Loại B”
+			END IF
+				ELSE 	IF điểm >= 45 THEN DISPLAY “Loại C”
+					END IF
+						ELSE 	IF điểm >= 35 THEN DISPLAY “Loại D”
+							END IF
+							ELSE DISPLAY “Loại D”
+END IF
+END

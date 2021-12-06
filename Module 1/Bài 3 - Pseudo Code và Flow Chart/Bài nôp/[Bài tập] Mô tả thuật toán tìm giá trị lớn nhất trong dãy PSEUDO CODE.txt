@@ -1,0 +1,9 @@
+BEGIN 
+INPUT N = n
+INPUT a1, a2, a3…ai
+max = a1
+WHILE i < n
+DO  	IF ai > max => max = ai
+	END IF
+DISPLAY max
+END 
