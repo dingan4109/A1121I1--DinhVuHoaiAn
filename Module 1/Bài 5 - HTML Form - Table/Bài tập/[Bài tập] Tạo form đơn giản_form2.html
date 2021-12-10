@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Tạo form đơn giản_form2</title>
+    <STYLE>
+        table {background-color: #fdfca8;color:#0837fd;font-family: "Lucida Sans"}
+        th {background-color: #d3fcd5;color: #0837fd;font-family: "Lucida Sans";
+        }
+        .col_one {text-align: center}
+    </STYLE>
+</head>
+<body>
+<!--Form 2-->
+<table>
+    <form name="form2" action="#" method="post">
+    <tr>
+        <th colspan="2">ĐĂNG KÝ HỌC VIÊN</th>
+    </tr>
+    <tr>
+        <td class="col_one"><label for="name">Họ và tên</label></td>
+        <td><input name="name" id="name" type="text"></td>
+    </tr>
+    <tr>
+        <td class="col_one"><label for="dob"> Ngày sinh</label></td>
+        <td><input name="dob" id="đob" type=text></td>
+    </tr>
+    <tr>
+        <td class="col_one"><label>Giới tính</label></td>
+        <td><input name="gender" id="nam" type="radio"> <label for="nam">Nam</label>
+            <input name="gender" id="nu" type="radio"><label for="nu">Nữ</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="col_one"><label for="address">Địa chỉ</label></td>
+        <td><textarea name="adđress" id="address"></textarea></td>
+    </tr>
+    <tr>
+        <td class="col_one"<label for="class">Lớp</label></td>
+        <td><select>
+            <option>---Chọn lớp---</option>
+            <option>A1121i1</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="col_one"><label for="email">Email</label></td>
+        <td><input name="email" id="email" type="email"></td>
+    </tr>
+    <tr>
+        <td class="col_one"><label for="phone">Điện thoại</label></td>
+        <td><input name="phone" id="phone" type="number"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><button type="submit">Đăng ký</button>
+            <button type="reset">Nhập lại</button></td>
+
+    </tr>
+
+    </form>
+</table>
+</body>
+</html>
