@@ -6,6 +6,7 @@
     <STYLE>
         th {text-align: left;}
         .radio_table {border:1px solid black}
+        .radio_table,radio_table td {text-align: center}
         .questions {font-weight: bold}
         .background_table_row {background-color: #f4f4f4}
         .background_table_firstrow {background-color: #cecece
@@ -63,12 +64,12 @@
     <textarea rows="5"></textarea>
     <br><br>
     <label>Please rate your levell of agreement with the following statements</label>
-    <table class="radio_table">
+    <table class="radio_table" cellpadding="5px">
         <tr class="background_table_firstrow">
             <th></th>
-            <th>Strongly Disagree</th>
-            <th>Disagree</th>
-            <th>Agree</th>
+            <th style="text-align: center;width: 100px">Strongly Disagree</th>
+            <th style="text-align: center;width: 100px">Disagree</th>
+            <th style="text-align: center;width: 100px">Agree</th>
         </tr>
         <tr>
             <th>Our products are priced fairly.</th>
@@ -84,9 +85,9 @@
         </tr>
         <tr>
             <th>Your would recommend our product to a friend or cowoker.</th>
-            <td><input name="quest1" id="three1" type="radio"><label for="1">1</label></td>
-            <td><input name="quest1" id="three2" type="radio"><label for="2">1</label></td>
-            <td><input name="quest1" id="three3" type="radio"><label for="3">1</label></td>
+            <td><input name="quest1" id="three1" type="radio"><label for="three1">1</label></td>
+            <td><input name="quest1" id="three2" type="radio"><label for="three2">1</label></td>
+            <td><input name="quest1" id="three3" type="radio"><label for="three3">1</label></td>
         </tr>
     </table><br>
 <input type="submit">
