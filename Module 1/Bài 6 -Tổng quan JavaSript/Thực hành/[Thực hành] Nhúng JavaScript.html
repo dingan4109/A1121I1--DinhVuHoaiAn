@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Hiển thị đầu ra</title>
+</head>
+<body>
+<!--Cách nhúng inline-->
+<button onclick="document.write('Xin chào');">Click Me!</button>
+<br><br>
+<!--Cách nhúng internal-->
+<button onclick="showMessage();">Click Me to show alert</button>
+<script>
+    function showMessage() {alert('Xin chào!')
+    }
+</script>
+<br><br>
+<!--Cách nhúng external-->
+<button onclick="showMessage();">Click Me to show alert - via file js</button>
+<script src="file_js_nhung.js"></script>
+</body>
+</html>
