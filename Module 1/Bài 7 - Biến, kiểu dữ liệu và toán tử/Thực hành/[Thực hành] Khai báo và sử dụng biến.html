@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Khai báo và sử dụng biến</title>
+</head>
+<body>
+<button onclick="do_this();">Click Me!</button>
+<script>
+    //Test
+    function do_this() {let so1 = prompt('Nhập số 1'); let so2 = prompt('Nhập số 2');
+        let SO1 = parseInt(so1);
+        let SO2 = parseInt(so2);
+        let ket_qua2 = SO1%SO2;
+        if (ket_qua2 == 0) {alert('Số ' + SO1 + ' là bội số ' + SO2)}
+        else {alert('Số ' + SO1 + ' không phải là bội số ' + SO2)}}
+</script>
+<br>
+</body>
+</html>
+<script>
+// Bài 1:
+    let i = 10;
+    let f = 20.5;
+    let c = true;
+    let s = "Hà Nội";
+document.write("i = " + i);document.write("<br>");
+document.write("f = " + f);document.write("<br>");
+document.write("b = " + c);document.write("<br>");
+document.write("s = " + s);document.write("<br>");
+
+// Bài 2:
+    let width = 20;
+    let height = 10;
+    let result = width*height;
+    document.write("Diện tích hình chữ nhật = " + result);
+
+// Bài 3:
+let a = prompt('MỜi nhập a');
+let b = prompt('Mời nhập b');
+let A = parseInt(a);
+let B = parseInt(b);
+let ket_qua = A%B;
+if (ket_qua == 0) {alert("A là bội số của B")}
+else {alert("A không phải là bội số của B")}
+
+</script>
