@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Ứng dụng chuyển đổi tiền tệ</title>
+
+    <style>
+        form {width: 80%}
+        table, td {border-collapse: collapse;text-align: center;}
+        label {font-weight: bold}
+        select {max-width: 100%} /*Check lại - chưa work*/
+    </style>
+</head>
+<body>
+<form>
+<table width="80%" cellpadding="5px" cellspacing="100px">
+    <tr>
+        <td>
+            <label for="input_amount">Amount</label><br>
+            <input type="number" id="input_amount">
+        </td>
+        <td>
+            <label>From Currency</label><br>
+        <select id="from_currency">
+            <option>VND</option>
+            <option>USD</option>
+            <option>JPY</option>
+        </select>
+        </td>
+        <td>
+            <label>To Currency</label><br>
+        <select id="to_currency">
+            <option>VND</option>
+            <option selected>USD</option>
+            <option>JPY</option>
+        </select>
+        </td>
+        <td valign="middle"><button type="button" id="convert" onclick="do_this();" style="background-color: #8e81ce;color: white;font-weight: bold">Convert</button> </td>
+    </tr>
+    <tr>
+       <td colspan="4">
+           <div id="ket_qua"></div>
+       </td>
+    </tr>
+</table>
+</form>
+</body>
+</html>
+<script>
+    function do_this()
+    {let a = parseInt(document.getElementById('input_amount').value);
+    let b = document.getElementById('from_currency').value;
+    let c = document.getElementById('to_currency').value;
+    const USD_rate = 23000;
+    const JPY_rate1 = 200;
+    const JPY_rate2 = 100;
+    switch (b) {
+        case 'VND':
+            if (c == 'VND') {document.getElementById('ket_qua').innerHTML = 'Please select To Currency'}
+            else if (c == 'USD') {document.getElementById('ket_qua').innerHTML = 'USD = ' + (a/USD_rate)}
+            else {document.getElementById('ket_qua').innerHTML= 'JPY = ' + (a/JPY_rate1)};
+            break;
+        case 'USD':
+            if (c == 'USD') {document.getElementById('ket_qua').innerHTML = 'Please select To Currency'}
+            else if (c == 'VND') {document.getElementById('ket_qua').innerHTML = 'USD = ' + (a*USD_rate)}
+            else {document.getElementById('ket_qua').innerHTML= 'JPY = ' + (a*JPY_rate2)};
+            break;
+        case 'JPY':
+            if (c == 'JPY') {document.getElementById('ket_qua').innerHTML = 'Please select To Currency'}
+            else if (c == 'USD') {document.getElementById('ket_qua').innerHTML = 'USD = ' + (a/JPY_rate2)}
+            else {document.getElementById('ket_qua').innerHTML= 'JPY = ' + (a*JPY_rate1)};
+            break;
+    }
+
+    }
+</script>

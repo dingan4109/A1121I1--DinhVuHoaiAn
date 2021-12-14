@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Biến, kiểu dữ liệu và toán tử</title>
+</head>
+<body>
+<!--Bài 1: Viết chương trình nhập điểm của một sinh viên cho các môn: Vật lý, Hóa học, và Sinh học. Sau đó hiển thị điểm trung bình và tổng của những điểm này.-->
+<h3>Bài 1</h3>
+<form>
+    <label for="vat_ly">Điểm môn Vật Lý</label>
+    <input type="number" id="vat_ly" name="vat_ly" max="10"><br>
+    <label for="hoa">Điểm môn Hóa</label>
+    <input type="number" id="hoa" name="hoa"><br>
+    <label for="sinh_hoc">Điểm môn Sinh Học</label>
+    <input type="number" id="sinh_hoc" name="sinh_hoc"><br>
+    <button type="button" onclick="kiem_tra();">Kiểm tra</button>
+    <div id="ket_qua"></div>
+</form>
+<script>
+    function kiem_tra()
+    {let vatLy = parseFloat(document.getElementById('vat_ly').value);
+        let Hoa = parseFloat(document.getElementById('hoa').value);
+        let sinhHoc = parseFloat(document.getElementById('sinh_hoc').value);
+        let tong = vatLy+Hoa+sinhHoc;
+        let trungBinh = tong/3;
+        document.getElementById('ket_qua').innerHTML = 'Điểm tổng: ' + tong.toFixed(1) + '<br>' + 'Điểm trung bình: ' + trungBinh.toFixed(1);
+    }
+</script>
+<br><br>
+<!--Bài 2: Viết chương trình nhập một giá trị là độ 0C (Celsius) và chuyển nó sang độ 0F (Fahrenheit). [Hướng dẫn: C/5 = (F-32)/9]-->
+<h3>Bài 2</h3>
+<form>
+    <label for="doC">Nhập độ C</label>
+    <input type="number" id="doC"><br>
+    <button type="button" onclick="kiem_tra_C();">Kiểm tra độ F</button>
+    <div id="ket_qua_C"></div>
+</form>
+<script>
+    function kiem_tra_C () {
+        let C = parseInt(document.getElementById('doC').value);
+        let F = (9*C)/5 + 32;
+        document.getElementById('ket_qua_C').innerHTML = 'Độ F = ' + F.toFixed(0);
+    }
+</script>
+<br><br>
+<!--Bài 3: Viết chương trình tính diện tích hình tròn-->
+<!--Bài 4: Viết chương trình chu vi hình tròn-->
+<h3>Bài 3+4</h3>
+<form>
+    <label style="font-weight: bold">Chọn giá trị nhập</label><br>
+    <input type="radio" id="d" onclick="cased();"> <lable for="d">Đường kính</lable>
+    <input type="radio" id="r" onclick="caser();"> <lable for="r">Bán kính</lable>
+    <input type="radio" id="C" onclick="caseC();"> <lable for="C">Chu vi</lable>
+    <input type="radio" id="S" onclick="caseS();"> <lablel for="S">Diện tích</lablel>
+    <div id="ket_qua_tinh"></div>
+</form>
+<script>
+    function cased() {let input_d = parseInt(prompt('Mời nhập đường kính'));
+    let Cd = input_d*3.14;
+    let Sd = Math.pow(input_d/2,2)*3.14;
+    document.getElementById('ket_qua_tinh').innerHTML = 'Chu vi hình tròn = '+ Cd.toFixed(1) +'<br>'+'Diện tích hình tròn = ' + Sd.toFixed(1);
+    }
+    function caser() {let input_r = parseInt(prompt('Mời nhập bán kính'));
+    let Cr = (input_r*2)*3.14;
+    let Sr = Math.pow(input_r,2)*3.14;
+    document.getElementById('ket_qua_tinh').innerHTML = 'Chu vi hình tròn = '+ Cr.toFixed(1) +'<br>'+'Diện tích hình tròn = ' + Sr.toFixed(1);
+    }
+    function caseC() {let input_C = parseInt(prompt('Mời nhập chu vi'));
+    let tinh_r = input_C/(2*3.14);
+    let SC = Math.pow(tinh_r,2)*3.14;
+    document.getElementById('ket_qua_tinh').innerHTML = 'Diện tích hình tròn = ' + SC.toFixed(1);
+    }
+    function caseS() {let input_S = parseInt(prompt('Mời nhập diện tích'));
+    let tinh_d = Math.sqrt(input_S/3.14)*2;
+    let CS = tinh_d*3.14;
+    document.getElementById('ket_qua_tinh').innerHTML = 'Chu vi hình tròn = '+ CS.toFixed(1);
+    }
+
+</script>
+</body>
+</html>
