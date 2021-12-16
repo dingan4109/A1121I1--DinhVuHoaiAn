@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Ứng dụng máy tính</title>
+    <style>
+        table td {border-collapse: collapse;border: none; text-align: center}
+        td {width: 50px;height: 30px}
+        table button {width:50px;height: 30px;background-color: white;border-radius: 5px;}
+        tr:nth-child(2) td button {background-color: gray}
+        tr td:nth-child(4) button {background-color: gray}
+        .bg_color {background-color: #4688f8;color: white;}
+    </style>
+</head>
+<body>
+<form action="#" method="post">
+ <h1>Calculator</h1>
+ <input type="number" id="soA">
+ <input type="number" id="soB"><br><br>
+    <button type="button" onclick="plus()">Addition(+)</button>
+    <button type="button" onclick="min()">Subtraction(-)</button>
+    <button type="button" onclick="mul()">Multiplication(x)</button>
+    <button type="button" onclick="div()">Division(:)</button>
+</form>
+<br>
+<div id="ket_qua"></div>
+
+<!--Bài mở rộng 1: Sử dụng 1 hàm duy nhất thay cho 4 hàm ở trên-->
+<form action="#" method="post">
+    <h1>Calculator</h1>
+    <input type="number" id="so1">
+    <select id="dau">
+        <option>+</option>
+        <option>-</option>
+        <option>x</option>
+        <option>:</option>
+    </select>
+    <input type="number" id="so2">
+    <button type="button" onclick="tinh()">=</button>
+    <span id="result"></span>
+</form>
+<br><br>
+<!--Bài mở rộng 2: Nâng cấp ứng dụng để trở nên cao cấp hơn-->
+    <form action="#" method="post">
+        <h1>Calculator</h1>
+        <table cellspacing="5px">
+            <tr>
+                <td colspan="4"><textarea cols="28" rows="2" id="ketqua"></textarea></td>
+            </tr>
+            <tr>
+                <td><button type="button" id="ngoac_trai">(</button></td>
+                <td><button type="button" id="ngoac_phai">)</button></td>
+                <td><button type="button" id="phan_tram">%</button></td>
+                <td><button type="button" id="AC">AC</button></td>
+            </tr>
+            <tr>
+                <td><button type="button">7</button></td>
+                <td><button type="button">8</button></td>
+                <td><button type="button">9</button></td>
+                <td><button type="button">&#247;</button></td>
+            </tr>
+            <tr>
+                <td><button type="button">4</button></td>
+                <td><button type="button">5</button></td>
+                <td><button type="button">6</button></td>
+                <td><button type="button">x</button></td>
+            </tr>
+            <tr>
+                <td><button type="button">1</button></td>
+                <td><button type="button">2</button></td>
+                <td><button type="button">3</button></td>
+                <td><button type="button">-</button></td>
+            </tr>
+            <tr>
+                <td><button type="button">0</button></td>
+                <td><button type="button">.</button></td>
+                <td><button type="button" class="bg_color" onclick="result_()">=</button></td>
+                <td><button type="button">+</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+<script>
+    var a = document.getElementById('soA');
+    var b = document.getElementById('soB');
+    function plus() {
+        let resultAdd = parseFloat(a.value) + parseFloat(b.value); document.getElementById('ket_qua').innerHTML = 'Kết quả = ' + resultAdd
+    }
+    function min() {
+        let resultMin = parseFloat(a.value) - parseFloat(b.value); document.getElementById('ket_qua').innerHTML = 'Kết quả = ' + resultMin
+    }
+    function mul() {
+        let resultMul = parseFloat(a.value) * parseFloat(b.value); document.getElementById('ket_qua').innerHTML = 'Kết quả = ' + resultMul
+    }
+    function div() {
+        let resultDiv = parseFloat(a.value) / parseFloat(b.value); document.getElementById('ket_qua').innerHTML = 'Kết quả = ' + resultDiv
+    }
+    // Bài mở rộng 1: Sử dụng 1 hàm duy nhất thay cho 4 hàm ở trên
+   function tinh() {
+        let so1 = parseFloat(document.getElementById('so1').value);
+        let so2 = parseFloat(document.getElementById('so2').value);
+        let phep_tinh = document.getElementById('dau').value;
+        switch (phep_tinh) {
+            case "+":
+                document.getElementById('result').innerHTML = so1 + so2;
+                break;
+            case "-":
+                document.getElementById('result').innerHTML = so1 - so2;
+                break;
+            case "x":
+                document.getElementById('result').innerHTML = so1 * so2;
+                break;
+            case ":":
+                document.getElementById('result').innerHTML = so1 / so2;
+                break;
+        }
+   }
+   //Bài mở rộng 2: Nâng cấp ứng dụng để trở nên cao cấp hơn
+//Bài cao siu quá, học thêm rồi c quay về làm tiếp, h làm trước giao diện nha :D
+</script>
