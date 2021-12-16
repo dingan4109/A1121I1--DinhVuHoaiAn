@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <title>[Bài tập] Ứng dụng máy tính</title>
     <style>
-        table td {border-collapse: collapse;border: none; text-align: center}
-        td {width: 50px;height: 30px}
-        table button {width:50px;height: 30px;background-color: white;border-radius: 5px;}
-        tr:nth-child(2) td button {background-color: gray}
-        tr td:nth-child(4) button {background-color: gray}
-        .bg_color {background-color: #4688f8;color: white;}
+        .div_tong {border:1px solid black;width: 250px;height: 350px;position: relative}
+        .div_ketqua {border: 1px solid black;width: 230px;height: 40px;position: absolute;margin: 10px}
+        .div_button {position: absolute;margin-top:60px;margin-left: 10px}
+        .div_button button {width:45px;height:45px;border-radius: 5px;background-color: white;margin: 5px}
+        .div_button button:nth-child(5n+4) {background-color: gray;color: white}
     </style>
 </head>
 <body>
@@ -41,44 +40,31 @@
 </form>
 <br><br>
 <!--Bài mở rộng 2: Nâng cấp ứng dụng để trở nên cao cấp hơn-->
-    <form action="#" method="post">
-        <h1>Calculator</h1>
-        <table cellspacing="5px">
-            <tr>
-                <td colspan="4"><textarea cols="28" rows="2" id="ketqua"></textarea></td>
-            </tr>
-            <tr>
-                <td><button type="button" id="ngoac_trai">(</button></td>
-                <td><button type="button" id="ngoac_phai">)</button></td>
-                <td><button type="button" id="phan_tram">%</button></td>
-                <td><button type="button" id="AC">AC</button></td>
-            </tr>
-            <tr>
-                <td><button type="button">7</button></td>
-                <td><button type="button">8</button></td>
-                <td><button type="button">9</button></td>
-                <td><button type="button">&#247;</button></td>
-            </tr>
-            <tr>
-                <td><button type="button">4</button></td>
-                <td><button type="button">5</button></td>
-                <td><button type="button">6</button></td>
-                <td><button type="button">x</button></td>
-            </tr>
-            <tr>
-                <td><button type="button">1</button></td>
-                <td><button type="button">2</button></td>
-                <td><button type="button">3</button></td>
-                <td><button type="button">-</button></td>
-            </tr>
-            <tr>
-                <td><button type="button">0</button></td>
-                <td><button type="button">.</button></td>
-                <td><button type="button" class="bg_color" onclick="result_()">=</button></td>
-                <td><button type="button">+</button></td>
-            </tr>
-        </table>
-    </form>
+<div class="div_tong">
+    <div class="div_ketqua"></div>
+    <div class="div_button">
+        <button type="button" style="background-color: gray;color: white">(</button>
+        <button type="button" style="background-color: gray;color: white">)</button>
+        <button type="button" style="background-color: gray;color: white">%</button>
+        <button type="button">AC</button><br>
+        <button type="button">7</button>
+        <button type="button">8</button>
+        <button type="button">9</button>
+        <button type="button">&#247;</button><br>
+        <button type="button">4</button>
+        <button type="button">5</button>
+        <button type="button">6</button>
+        <button type="button">x</button><br>
+        <button type="button">1</button>
+        <button type="button">2</button>
+        <button type="button">3</button>
+        <button type="button">-</button><br>
+        <button type="button">0</button>
+        <button type="button">.</button>
+        <button type="button" style="background-color: #4688f8;color: white">=</button>
+        <button type="button">+</button>
+    </div>
+</div>
 </body>
 </html>
 <script>
