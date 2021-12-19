@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Sự kiện chuột</title>
+</head>
+<body>
+<img src="ball.png" alt="Ball" id="myImage"><br>
+<h1>Click the buttons below to move the ball</h1>
+<button type="button" onclick="move_right()">Move Right</button>
+<button type="button" onclick="move_left()">Move Left</button>
+</body>
+</html>
+<script>
+let imgObj = null;
+window.onload = init;
+function init() {
+		imgObj = document.getElementById('myImage');
+		imgObj.style.position = 'relative';
+		imgObj.style.left = '0px';
+}
+function move_right() {
+	imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+}function move_left() {
+	imgObj.style.left = parseInt(imgObj.style.left) + (-10) + 'px';
+}
+
+</script>
+

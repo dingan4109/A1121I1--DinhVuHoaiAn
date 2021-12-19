@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Máy tính đơn giản</title>
+    <style>
+        .div_tong {border:1px solid black;width: 250px;height: 300px;position: relative}
+        .div_ketqua {border: 1px solid black;width: 230px;height: 40px;position: absolute;margin: 10px}
+        .div_button {position: absolute;margin-top:60px;margin-left: 10px}
+        button {width:45px;height:45px;border-radius: 5px;background-color: white;color: blue;margin: 5px}
+    </style>
+</head>
+<body>
+<div class="div_tong">
+    <div class="div_ketqua" id="ketqua" align="right"></div>
+    <div class="div_button">
+        <button type="button" onclick="getValue('1')">1</button>
+        <button type="button" onclick="getValue('2')">2</button>
+        <button type="button" onclick="getValue('3')">3</button>
+        <button type="button" onclick="getValue('+')">+</button><br>
+        <button type="button" onclick="getValue('4')">4</button>
+        <button type="button" onclick="getValue('5')">5</button>
+        <button type="button" onclick="getValue('6')">6</button>
+        <button type="button" onclick="getValue('-')">-</button><br>
+        <button type="button" onclick="getValue('7')">7</button>
+        <button type="button" onclick="getValue('8')">8</button>
+        <button type="button" onclick="getValue('9')">9</button>
+        <button type="button" onclick="getValue('*')">x</button><br>
+        <button type="button" onclick="reset()">C</button>
+        <button type="button" onclick="getValue('0')">0</button>
+        <button type="button" onclick="calculate()">=</button>
+        <button type="button" onclick="getValue('/')">&#247;</button>
+    </div>
+</div> 
+</body>
+</html>
+<script>
+    var in_ra;
+function getValue(number) {console.log(number);
+    in_ra = document.getElementById('ketqua').innerText;
+    in_ra = in_ra + number;
+    document.getElementById("ketqua").innerText = in_ra;
+}
+function calculate() {var in_ketqua = eval(in_ra); document.getElementById("ketqua").innerText = in_ketqua}
+function reset() {var reset = '';document.getElementById("ketqua").innerText = reset}
+
+</script>

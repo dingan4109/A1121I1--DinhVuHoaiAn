@@ -28,12 +28,12 @@
 <!-- Bài 3: Thêm thẻ HTML-->
 <form action="#" method="post">
 	<input type="text" id="nhapNoiDung">
-	<button type="button" onclick="addNoiDung()">Add</button>
+	<button type="button" onclick="add()">Add</button>
 	<br>
 </form>
 <button type="button" id="inNoiDungMoi" style="width: 30%;height: 30px"></button>
 <script type="text/javascript">
-	function addNoiDung() {
+	function add() {
 		let noiDung = document.getElementById('nhapNoiDung').value;
 		if (noiDung =='') {alert('Bạn chưa nhập nội dung');}
 		else 

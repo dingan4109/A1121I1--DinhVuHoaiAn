@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Sự kiện bàn phím</title>
+</head>
+<body onload="do_ready()">
+<img src="Nobita.png" alt="Nobita" id="Nobita" width="280" height="300"><br>
+</body>
+</html>
+<script>
+let imgObj = null;
+window.onload = init;
+function init() {
+		imgObj = document.getElementById('Nobita');
+		imgObj.style.position = "absolute";
+		imgObj.style.left = "0px";
+		imgObj.style.top = "0px";
+}
+function move_up() {
+	imgObj.style.top = parseInt(imgObj.style.top) + (-10) + 'px';
+}
+function move_down() {
+	imgObj.style.top = parseInt(imgObj.style.top) + 10 + 'px';
+}
+function move_right() {
+	imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+}
+function move_left() {
+	imgObj.style.left = parseInt(imgObj.style.left) + (-10) + 'px';
+}
+function move_selection(evt) {
+	switch (evt.keyCode) {
+		case 38: 
+			move_up(); break;
+		case 40: 
+			move_down(); break;
+		case 37: 
+			move_left(); break;
+		case 39: 
+			move_right(); break;
+	}
+}
+function do_ready() {
+	window.addEventListener('keydown', move_selection);
+}
+</script>
+
