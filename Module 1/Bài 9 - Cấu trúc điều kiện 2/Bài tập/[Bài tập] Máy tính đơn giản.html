@@ -14,34 +14,38 @@
 <div class="div_tong">
     <div class="div_ketqua" id="ketqua" align="right"></div>
     <div class="div_button">
-        <button type="button" onclick="getValue('1')">1</button>
-        <button type="button" onclick="getValue('2')">2</button>
-        <button type="button" onclick="getValue('3')">3</button>
-        <button type="button" onclick="getValue('+')">+</button><br>
-        <button type="button" onclick="getValue('4')">4</button>
-        <button type="button" onclick="getValue('5')">5</button>
-        <button type="button" onclick="getValue('6')">6</button>
-        <button type="button" onclick="getValue('-')">-</button><br>
-        <button type="button" onclick="getValue('7')">7</button>
-        <button type="button" onclick="getValue('8')">8</button>
-        <button type="button" onclick="getValue('9')">9</button>
-        <button type="button" onclick="getValue('*')">x</button><br>
+        <button type="button" onclick="getNumber('1')">1</button>
+        <button type="button" onclick="getNumber('2')">2</button>
+        <button type="button" onclick="getNumber('3')">3</button>
+        <button type="button" onclick="getOperator('+')">+</button><br>
+        <button type="button" onclick="getNumber('4')">4</button>
+        <button type="button" onclick="getNumber('5')">5</button>
+        <button type="button" onclick="getNumber('6')">6</button>
+        <button type="button" onclick="getOperator('-')">-</button><br>
+        <button type="button" onclick="getNumber('7')">7</button>
+        <button type="button" onclick="getNumber('8')">8</button>
+        <button type="button" onclick="getNumber('9')">9</button>
+        <button type="button" onclick="getOperator('*')">x</button><br>
         <button type="button" onclick="reset()">C</button>
-        <button type="button" onclick="getValue('0')">0</button>
+        <button type="button" onclick="getNumber('0')">0</button>
         <button type="button" onclick="calculate()">=</button>
-        <button type="button" onclick="getValue('/')">&#247;</button>
+        <button type="button" onclick="getOperator('/')">&#247;</button>
     </div>
 </div> 
 </body>
 </html>
 <script>
-    var in_ra;
-function getValue(number) {console.log(number);
-    in_ra = document.getElementById('ketqua').innerText;
-    in_ra = in_ra + number;
-    document.getElementById("ketqua").innerText = in_ra;
-}
-function calculate() {var in_ketqua = eval(in_ra); document.getElementById("ketqua").innerText = in_ketqua}
-function reset() {var reset = '';document.getElementById("ketqua").innerText = reset}
+    let in_ra = document.getElementById('ketqua');
+    let tra_ve_0 = 0;
+
+function getNumber(number) {console.log(number);
+    if (in_ra === '' || tra_ve_0 === 0) {in_ra.innerText += number;}
+       else {in_ra.innerText = number; tra_ve_0 = 0;}
+   }
+        
+function getOperator(operator){console.log(operator);
+in_ra.innerText+=operator;tra_ve_0=0}      
+function calculate() {tra_ve_0 =eval(in_ra.innerText); in_ra.innerText=tra_ve_0;}
+function reset() {in_ra.innerText='';}
 
 </script>
