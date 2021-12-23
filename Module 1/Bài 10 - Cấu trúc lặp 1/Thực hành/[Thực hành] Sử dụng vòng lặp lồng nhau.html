@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[Thực hành] Sử dụng vòng lặp lồng nhau</title>
+</head>
+<body>
+<!-- <table>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table> -->
+</body>
+</html>
+<script type="text/javascript">
+let html = '<table border=\"1\">\n';
+for(let row= 1; row<=10; row++) {
+	html += '<tr>\n';
+	for(let col = 1; col <=10;col++) {
+		html+= '<td>'+ row*col + '</td>\n';
+	} html += '</tr>\n';
+} html += '</table>';
+document.write(html);
+</script>

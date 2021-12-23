@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[Thực hành] Sử dụng vòng lặp for</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+//Bài 1: Viết chương trình hiển thị chuỗi “The number is N” 5 lần sử dụng vòng lặp for. Với N sẽ hiển thị từ 0 đến 5.	
+	for(i=0;i<=5;i++) {
+	document.write(i);document.write('<br>')}
+
+//Bài 2: Viết chương trình nhập vào một số bất kỳ lớn hơn 0. Tính tổng các phần tử từ 1 đến số vừa nhập vào.
+let input_so = parseInt(prompt('Input số > 0'));
+let sum = 0;
+for(i = 0;i<= input_so;i++) {
+	sum=sum+i;
+}		document.write('Tổng các số từ 0 tới ' + input_so + ' là ' + sum);
+</script>
