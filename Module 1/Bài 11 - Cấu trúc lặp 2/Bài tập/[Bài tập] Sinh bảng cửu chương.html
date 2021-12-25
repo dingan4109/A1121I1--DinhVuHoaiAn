@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<div id="table"></div>
+
+</body>
+</html>
+<script type="text/javascript">
+// Bảng cửu chương: Chiều ngang
+    document.getElementById('table').innerHTML = 
+        '<table border=\"1\">\n' +
+        '    <tr>\n' +
+        '        <td></td>\n' +
+        '        <td></td>\n' +
+        '        <td></td>\n' +
+        '        <td></td>\n' +
+        '        <td></td>\n' + 
+        '    </tr>\n'+
+        '</table>';
+        let html = '<table>\n';
+    for(let row =1; row<=10;row++) {
+        html += '<tr>\n';
+        for(let col = 1; col<=5;col++) {
+        html += '<td>' + col +' x ' + row + ' = ' + col*row + '</td>\n';
+        }; 
+        html +='</tr>\n';
+        }
+        html+='</table>'
+        document.getElementById('table').innerHTML = html;
+
+//Bảng cửu chương: Chiều dọc
+    for(let j=1; j<=9;j++) {
+        for(let i=1;i<=10;i++){
+          document.write(j+ "x" +i +" = " + j*i +'<br>');}
+          document.write('<br>');}
+</script>

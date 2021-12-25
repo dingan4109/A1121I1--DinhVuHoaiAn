@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<!-- Bài 3 code lụi -->
+	<p id='in_ra'></p>
+
+<!-- Bài 8: giao diện -->
+<button onclick="choi()">Chơi</button>
+<button onclick="choi()">Chơi lại</button>
+</body>
+</html>
+<script type="text/javascript">
+//Bài 1: Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành.
+for(let i = 1; i<=100;i++) {
+	document.write(i + ', '); 
+	if(i==99) {document.write('Đã hoàn thành.')}
+}
+//OR:
+for(let i = 1; i<=100;i++) {
+	document.write(i + ', '); 
+	if(i==99) {break;}
+} document.write('Đã hoàn thành.')
+//Bài 2: Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập. Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm nhiệt độ. Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ.
+let input;
+do{ input = prompt('Nhập nhiệt độ');
+	if(input > 100) {alert('Vui lòng giảm nhiệt độ');}
+	if(input < 20) {alert('Vui lòng tăng nhiệt độ');}
+	} while(input >100 || input < 20)
+// Bài 3: Hiển thị ra (20) số trong dãy fibonacci đầu tiên.
+
+//Đây là code lụi, code trong mơ hồ nhưng không hiểu tại sao nó chạy được
+let input = prompt('input số lượng số nguyên tố cần in ra');
+in_ra += sum + ', ';
+let i, sum = 0, count = 0;
+for (i=1;i>0;i+=sum) {
+document.getElementById('in_ra').innerHTML = sum;
+sum = sum + i;
+in_ra += i + ", " + sum + ", ";
+count +=2;
+if(count==input) {break;};}
+document.getElementById('in_ra').innerHTML = in_ra;
+
+//Còn đây là code sau khi đã vác bài đi hỏi khắp kiểu con đà điểu
+let n1 = 0, n2 = 1, nNext; 
+for(i=0;i<=20;i++) { 
+	if(i==0) {nNext=0}
+		else if(i==1) {nNext =1}
+			else {nNext = n1+n2;
+					n1=n2;
+					n2=nNext;}
+					document.write('F('+i+') = ' + nNext + ', ')
+	}
+//Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.
+let n1 = 0, n2 = 1, nNext; 
+for(i=0;i<=20;i++) { 
+	if(i==0) {nNext=0}
+		else if(i==1) {nNext =1}
+			else {nNext = n1+n2;
+					n1=n2;
+					n2=nNext;}
+	if(nNext%5==0) {document.write(nNext);break;}
+	}
+
+//Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.
+let n1 = 0, n2 = 1, nNext, sum = 0;
+for(i=0;i<=20;i++) { 
+	if(i==0) {nNext=0}
+		else if(i==1) {nNext =1}
+			else {nNext = n1+n2;
+					n1=n2;
+					n2=nNext;}
+					sum+=nNext;}
+					document.write(sum);
+//Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.
+let count = 0, sum = 0;
+for(let j = 0; j>=0; j++) {
+	if(j%7==0) {sum+=j; count+=1;};
+	if(count ==30) {break;};
+} document.write(sum)
+					
+//Bài 7:Hãy viết một chương trình in ra các số từ 1 đến 100. Nhưng nếu số chia hết cho 3 thì in ra "Fizz", 5 thì in ra "Buzz" thay vì in ra số đó. Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".
+let text = '';
+for (let i = 1;i<=100;i++) {
+	if(i%3==0 && i%5==0) {text +='FizzBuzz<br>'}
+		else if(i%3==0) {text+='Buzz<br>'}
+			else if(i%5==0) {text+='Fizz<br>'}
+				else{text+=i+'<br>'}
+} document.write(text);
+//Bài 8: Game đoán số
+function choi() { //chọn khoảng sinh số ngẫu nhiên
+				let inputMin = parseInt(prompt('Khoảng bắt đầu'));
+				let inputMax = parseInt(prompt('Khoảng kết thúc'));
+				let randomNumber = parseInt(Math.random()*(inputMax - inputMin)+inputMin); console.log(randomNumber);
+				//Bắt đầu đoán số
+				let number;
+				do {
+					number = parseInt(prompt('Nhập số đoán'));
+					if(number==randomNumber) {
+					alert('Chúc mừng, bạn đã đoán đúng');}
+					else if(number>randomNumber) {alert('Số nhập vào lớn hơn đáp án');}
+						else {alert('Số nhập vào bé hơn đáp án');};}
+				while(number!=randomNumber);
+}
+</script>
