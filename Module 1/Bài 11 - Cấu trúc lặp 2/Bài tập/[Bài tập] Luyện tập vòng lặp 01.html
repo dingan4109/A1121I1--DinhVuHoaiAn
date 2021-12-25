@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>[Bài tập] Luyện tập vòng lặp 01</title>
 </head>
 <body>
 <!-- Bài 3 code lụi -->
@@ -32,11 +32,11 @@ do{ input = prompt('Nhập nhiệt độ');
 // Bài 3: Hiển thị ra (20) số trong dãy fibonacci đầu tiên.
 
 //Đây là code lụi, code trong mơ hồ nhưng không hiểu tại sao nó chạy được
-let input = prompt('input số lượng số nguyên tố cần in ra');
-in_ra += sum + ', ';
+let input = prompt('input số lượng số trong dãy Fibonacci cần in ra');
+let in_ra = document.getElementById('in_ra').innerHTML;
 let i, sum = 0, count = 0;
 for (i=1;i>0;i+=sum) {
-document.getElementById('in_ra').innerHTML = sum;
+in_ra += sum + ', ';
 sum = sum + i;
 in_ra += i + ", " + sum + ", ";
 count +=2;
