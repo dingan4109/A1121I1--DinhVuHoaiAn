@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>[Bài tập] Luyện tập vòng lặp 02</title>
+</head>
+<body>
+</body>
+</html>
+<script type="text/javascript">
+//Bài 1: In dãy Fibonacci
+let count = prompt('input số lượng số trong dãy Fibonacci cần in ra');
+let n1 = 0, n2 = 1, nNext;
+for(let i=0;i<=count;i++) { 
+	if(i==0) {nNext=0}
+		else if(i==1) {nNext =1}
+			else {nNext = n1+n2;
+					n1=n2;
+					n2=nNext;}
+					document.write('F('+i+') = ' + nNext + '<br>');}
+//Bài 2: Tính giai thừa của một số nguyên dương
+let number = prompt('Nhập số nguyên dương');
+let n=1,nGiaiThua;
+if(number==0) {nGiaiThua=0}
+else{
+for(let i=1;i<=number;i++) {
+	nGiaiThua=i*n;
+	n = nGiaiThua;}}
+	document.write(nGiaiThua);
+//Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau
+//Hình 1
+let chuoi = '';	
+for(let i=0;i<5;i++) { chuoi+='*';
+	document.write(chuoi+ '<br>');} 
+//Hình 2
+for(let i=5;i>0;i--) { 
+	for(let j = 0; j<i;j++) {
+		document.write('*');
+	}document.write('<br>')
+}
+//Hình 3
+for (let number = 1;number<=5;number++) {
+	for(let i=1;i<=5-number;i++) {document.write('&nbsp &nbsp');};
+	for(let j = 1;j<=number;j++) {document.write('*');};
+		document.write('<br>');
+}
+//Hình 4
+for (let number = 5;number>=1;number--) {
+	for(let i=1;i<=number;i++) {document.write('*');};
+	for(let j = 1;j<=5-number;j++) {document.write('&nbsp &nbsp');};
+		document.write('<br>');
+}
+// Bài 4:  In hình chữ nhật rỗng
+for(let chieuRong=0;chieuRong<6;chieuRong++) {
+	document.write('*');
+	for(let chieuDai=0;chieuDai<20;chieuDai++) {
+	if(chieuRong==0 || chieuRong==5) {document.write('*');}
+	 else{document.write('&nbsp&nbsp')}
+} document.write('* <br>')}
+
+//OR:
+for(chieuRong=1;chieuRong<=6;chieuRong++) {
+	for(chieuDai=1;chieuDai<=20;chieuDai++) {
+	if(chieuRong == 1|| chieuDai == 1 || chieuRong == 6 || chieuDai == 20){
+          document.write("*");
+            }
+            else{
+                document.write("&nbsp&nbsp");
+            }
+        }
+        document.write("<br>");
+    }
+
+//Bài 5: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.
+  let tong_vay = parseInt(prompt('Tổng vay'));
+    let so_thang = parseInt(prompt('Số tháng'));
+    let lai_suat = parseFloat(prompt('Lãi suất'));
+    let goc_hang_thang = tong_vay/so_thang;
+    for(let i=0;i<so_thang;i++) {let a = tong_vay-(i*goc_hang_thang);
+        let nop = goc_hang_thang+(a*lai_suat);
+        document.write(nop + '<br>');
+}
+//Bài 6: In hình trái tim
+
+</script>
