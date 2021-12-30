@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[Bài tập] Luyện tập mảng 02 </title>
+</head>
+<body>
+</body>
+</html>
+<script type="text/javascript">
+//Bài 1: Viết chương trình khởi tạo mảng 2 chiều, gồm một bộ các phần tử có sẵn,  in ra các phần tử trong mảng. Chú ý: Sử dụng vòng lặp for lồng nhau
+let a = [
+    [1, 2, 1, 24],
+    [8, 11, 9, 4],
+    [7, 0, 7, 27],
+    [7, 4, 28, 14],
+    [3, 10, 26, 7]
+];
+console.log(a.length);
+/*Dùng For loop*/
+for( let row = 0; row<a.length;row++) {
+	document.write('row ' + row + '<br>')
+	for(let col=0;col<a[row].length;col++) {
+		document.write(a[row][col] + '<br>')
+	}
+}
+/*Dùng For-in*/
+for(let row in a) {
+	document.write('row ' + row +'<br>')
+	for(let col in a[row]) {
+		document.write(a[row][col] + '<br>')
+	}
+}
+//Bài 2: Viết một chương trình để in các ký tự trong một mảng theo thứ tự đảo ngược. Ví dụ, nếu một mảng chứa các ký tự  [ 'c', 's', 'c', '2', '6', '1' ] sau khi thực hiện đảo ngược sẽ là "162csc"
+let stringInput = prompt('Nhập chuỗi cần đảo');
+let stringArray = stringInput.split('');
+console.log(stringArray);
+
+document.write ('Chuỗi vừa nhập là ' + stringArray +'<br>');
+let afterReverse = stringArray.reverse();
+document.write('Chuỗi đảo ngược là ' + afterReverse.join(''));
+
+//Bài 3: Viết một chương trình khai báo một mảng ký tự và kích thước của mảng. Chương trình này đếm số ký tự số trong mảng. 
+/*Declare Array' size & values*/
+let inputSize = parseInt(prompt('Nhập kích thước mảng'));
+let userArr = [];
+for(let i = 0; i<inputSize;i++) {
+	let value = prompt('Nhập giá trị mảng');
+	userArr.push(value);
+} 
+console.log(userArr);
+console.log(userArr.length);
+/*Browse the Array to check if it contains number*/
+let numCheck=0;
+for(let j = 0;j<userArr.length;j++) {
+	if(isNaN(userArr[j])==false) {numCheck+=1}
+	/* Check lại xem cách này làm như nào?
+	 if(parseInt(userArr[j])!='NaN') {numCheck+=1}*/
+} 
+document.write(numCheck);
+
+// function isNum(val){
+//   return !isNaN(val)
+// }
+// console.log(isNum('aaa'));    //flase      
+// console.log(isNum('13579'));  //true     
+// console.log(isNum('-13'));	//true
+
+//Bài 4: Viết một chương trình để đếm số từ trong một chuỗi
+let stringInput = prompt('Nhập chuỗi cần đếm');
+let stringArray = stringInput.split(' ');
+console.log(stringArray);
+document.write('Chuỗi cần đếm là: ' + stringArray + '<br>');
+document.write('Số từ trong chuỗi là: ' + stringArray.length)
+
+//Bài 5: Viết một chương trình nhập vào 2 chuỗi, sau đó kiểm tra xem hai chuỗi có giống nhau hay không.
+/*Generally, if the strings contain only ASCII characters, you use the === operator to check if they are equal.
+When the strings contain characters that include combining characters, you normalize them first before comparing them for equality.
+
+const c1 = 'e\u0301';
+const c2 = 'é';
+console.log(c1.normalize() === c2.normalize()); // true*/
+
+/*Cách 1 using === Operator*/
+let stringInput1 = prompt('Nhập chuỗi thứ nhất');
+let stringInput2 = prompt('Nhập chuỗi thứ hai');
+if(stringInput1===stringInput2) {alert('Same')}
+else {alert('Not same')}
+
+/*Cách 2 using array */
+let stringInput1 = prompt('Nhập chuỗi thứ nhất');
+let stringInput2 = prompt('Nhập chuỗi thứ hai');
+let stringArray1 = stringInput1.split('');
+console.log(stringArray1);
+let stringArray2 = stringInput2.split('');
+console.log(stringArray2);
+
+let check = 0;
+if(stringArray1.length != stringArray2.length) {document.write('Hai chuỗi nhập vào khác nhau')}
+else {
+for(i=0;i<stringArray1.length;i++){
+	if(stringArray1[i]!== stringArray2[i]) {check +=1; break;}
+}
+if (check==1) {document.write('Hai chuỗi nhập vào khác nhau')}
+	else {document.write('Hai chuỗi nhập vào giống nhau')};}
+
+//Bài 6: Viết chương trình nhập vào một mảng ký tự, tìm tất cả các ký tự trong mảng là (-) và thay thế các ký tự này bởi ký tự ( _ )
+/*Declare Array' size & values*/
+let inputSize = parseInt(prompt('Nhập kích thước mảng'));
+let userArr = [];
+for(let i = 0; i<inputSize;i++) {
+	let value = prompt('Nhập giá trị mảng');
+	userArr.push(value);
+} 
+console.log(userArr);
+console.log(userArr.length);
+/*Browser Array, find and replace '-' by '_' */
+if(userArr.includes('-')==false) {document.write('Khôn tồn tại \"-\" trong mảng')
+}else {
+	for(let i =0; i<userArr.length;i++) {
+		if(userArr[i]==='-') {userArr.splice(i,1,'_')}
+	} document.write(userArr)
+}
+</script>

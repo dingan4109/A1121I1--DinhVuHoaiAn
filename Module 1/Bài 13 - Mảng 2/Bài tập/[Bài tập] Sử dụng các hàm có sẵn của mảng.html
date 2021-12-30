@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[Bài tập] Sử dụng các hàm có sẵn của mảng</title>
+</head>
+<body>
+</body>
+</html>
+<script type="text/javascript">
+//Bài 1: Viết một chương trình Javascript để nối tất cả các phần tử trong một mảng chuỗi lại với nhau. 
+let myColor = ["Red", "Green", "White", "Black"];
+myColor.toString();
+document.write(myColor);
+console.log(typeof myColor);
+
+//OR
+let myColor1 = ["Red", "Green", "White", "Black"];
+myColor1.join(',');
+document.write(myColor1);
+console.log(typeof myColor1);
+
+//Bài 2: Viết một chương trình nhận một số nhập vào và chèn dấu (-) giữa 2  số chẵn. Ví dụ nếu bạn nhập vào 025468 thì kết quả của chương trình sẽ là 0-254-6-8.
+let input = prompt('Nhập chuỗi số');
+let newArray = input.split('');
+// console.log(typeof newArray);
+// console.log(newArray);
+for(i=0;i<newArray.length;i++) {
+	if(newArray[i]%2==0 && newArray[i+1]%2==0) {
+		newArray.splice(i+1,0,'-')
+	}
+}
+ document.write(newArray.join(''));
+
+//Bài 3: Viết một chương trình nhập vào một chuỗi và chuyển các ký tự chữ thường trong chuỗi vừa nhập sang thành dạng chữ hoa. Ví dụ: nếu bạn nhập vào chuỗi 'The Quick Brown Fox' kết quả của chương trình là 'tHE qUICK bROWN fOX'.
+let txt = 'The Quick Brown Fox';
+let newTxt = '';
+for(let i = 0;i<txt.length;i++) {
+	if(i==0 || i ==3  || i == 8 || i ==13) {
+		newTxt += txt[i].toLowerCase();
+	} else {
+		newTxt += txt[i].toUpperCase();
+	}
+} 
+document.write(newTxt);
+
+//OR
+let txt = 'The Quick Brown Fox';
+let newTxt = '';
+for(let i = 0;i<txt.length;i++) {
+	if(txt[i] == txt[i].toUpperCase()) {
+		newTxt += txt[i].toLowerCase();
+	} else {
+		newTxt += txt[i].toUpperCase();
+	}
+} 
+document.write(newTxt);
+</script>

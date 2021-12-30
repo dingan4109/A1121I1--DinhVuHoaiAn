@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[Bài tập] Từ điển </title>
+</head>
+<body>
+	<form action="#" method="get">
+		<label for="inputSearch"> Nhập từ cần tra</label><br>
+		<input type="text" id="inputSearch">
+		<button type="button" onclick="process()">Tra</button>
+	</form>
+	<div id="show_result"></div>
+</body>
+</html>
+<script type="text/javascript">
+//Dùng vòng lặp
+let engList = ['push','pop','join','slice','çoncat','sort']
+let vieList = ['thêm vào','lấy đi','nối','cắt','nhập mảng','sắp xếp']
+let inputSearch;
+let check;
+function process() {
+	inputSearch= document.getElementById('inputSearch').value;
+	for(let i = 0;i<engList.length;i++) {
+	if(engList[i] === inputSearch) {
+		document.getElementById('show_result').innerText = vieList[i];check =1; break;
+	} 
+} if (check != 1) {document.getElementById('show_result').innerText='Không tìm thấy từ cần tra'}
+}
+//Dùng indexOf();
+
+</script>
