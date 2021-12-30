@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>[Thực hành] Tìm giá trị trong mảng</title>
+</head>
+<body>
+<p id="demo1"></p1>
+</body>
+</html>
+<script type="text/javascript">
+let input = prompt('Nhập giá trị cần tìm');
+let check = 0;
+let array = [-3, 5, 1, 3, 2, 10];
+for(let i=0;i<array.length;i++) {
+	if(input == array[i]) {alert('Giá trị '+ input +' nằm ở vị trí thứ ' + i);check+=1;break;}
+} if (check==0) {alert('Không tìm thấy')};
+
+//if(array[i].equals(input)) {}
+//Add break; để vòng lặp dừng lại sau khi tìm thấy giá trị\
+
+//TRƯỜNG HƠP CÓ NHIỀU GIÁ TRỊ TRÙNG LẶP TRONG MẢNG VÀ CẦN IN HẾT (k dùng break;)
+let input = prompt('Nhập giá trị cần tìm');
+let check = 0;
+let array = [-3, 5, 1, 3, 2, 10, 2];
+for(let i=0;i<array.length;i++) {
+	if(input == array[i]) {document.getElementById('demo1').innerHTML += 'Tìm thấy tại vị trí thứ ' + i + '<br>';check+=1;}
+} if (check==0) {alert('Không tìm thấy')};
+
+//Dùng includes();
+let input = parseInt(prompt('Nhập giá trị cần tìm'));
+let array = [-3, 5, 1, 3, 2, 10, 2];
+let result = array.includes(input);
+	if(result) {document.getElementById('demo1').innerHTML = 'Tìm thấy '+input +'trong mảng'}
+	else{document.getElementById('demo1').innerHTML='Không tìm thấy '+input +'trong mảng'};
+</script>

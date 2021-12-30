@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>[Thực hành] Tạo và thao tác với mảng</title>
+</head>
+<body>
+	<form action="#" method="post">
+		<input type="text" id="input">
+		<button type="button" onclick="add_to_array()">Add</button>
+		<button type="button" onclick="display_array()">Display</button>
+	</form>
+	<hr>
+<div id="in_ra"></div>
+</body>
+</html>
+<script type="text/javascript">
+let x = 0;
+let array = Array();
+function add_to_array() {
+	array[x] = document.getElementById('input').value;
+	//alert('Element ' + array[i] + ' is added at index ' + i);
+	x++
+	document.getElementById('input').value = '';
+	console.log(array);
+} 
+function display_array() {
+     let e = "<hr/>";
+    for (let i = 0; i < array.length; i++) {
+        e += "Element " + i + " = " + array[i] + "<br/>";
+    }
+    document.getElementById("result").innerHTML = e;
+    }
+
+	
+//OR
+let i = 0;
+let array = [];
+function add_to_array() {
+	i = document.getElementById('input').value;
+	array.push(i);
+	document.getElementById('input').value = '';
+	console.log(array);
+} 
+function display_array() {
+    for (let i = 0; i < array.length; i++) {
+          document.getElementById("in_ra").innerHTML += "Element " + i + " = " + array[i] + "<br/>";
+    }
+		}
+</script>
