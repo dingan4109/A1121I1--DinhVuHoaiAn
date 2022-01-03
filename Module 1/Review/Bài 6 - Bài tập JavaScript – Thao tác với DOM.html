@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bài 6 - Bài tập JavaScript – Thao tác với DOM</title>
+</head>
+<body>
+<form action="#" method="post">
+	<h2>Lấy giá trị của thẻ HTML</h2>
+	<label for="inputName">Bạn tên gì?</label>
+	<input type="text" id="inputName"> <br>
+	<label>Chọn sở thích của bạn:</label><br>
+	<input type="checkbox" id="di_choi" value="Đi chơi" class="checkbox"><label for="di_choi">Đi chơi</label><br>
+	<input type="checkbox" id="di_du_lich" value="Đi du lịch" class="checkbox"><label for="di_du_lich">Đi du lịch</label><br>
+	<input type="checkbox" id="di_sieu_thi" value="Đi siêu thị" class="checkbox"><label for="di_sieu_thi">Đi siêu thị</label><br>
+	<input type="checkbox" id="hoc_lap_trinh" value="Học lập trình" class="checkbox"><label for="hoc_lap_trinh">Học lập trình</label><br>
+	<button type="button" onclick="showResult()"> Xem kết quả</button>
+</form>
+</body>
+</html>
+<script type="text/javascript">
+let name = document.getElementById('inputName');
+let checked = document.getElementsByClassName('checkbox');
+let checkedValue; 
+let text = '';
+
+function showResult() {
+	for(i=0;checked[i];i++) {
+		if(checked[i].checked){
+           checkedValue = checked[i].value;
+           text += checkedValue + ', ';}
+	} 
+	alert('Bạn ' + name.value + ' có sở thích là '+ text);
+	text = '';
+}
+</script>
+
