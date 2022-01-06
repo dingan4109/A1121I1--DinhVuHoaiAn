@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[Thực hành] Tìm giá trị nhỏ nhất của mảng</title>
+</head>
+<body>
+<p id="outputSortedArray1"></p>
+<p id="outputSortedArray2"></p>
+</body>
+</html>
+<script type="text/javascript">
+let arr1 = [3, 5, 1, 8, -3, 7, 8];
+let arr2 = [7, 12, 6, 9, 20, 56, 89];
+let arr3 = [];
+let arr4 = [0, 0, 0, 0, 0, 0];
+console.log(arr3.length);
+//Cách 1: Dùng sort();
+let result ='';
+function sortArray(arr) {
+if(arr.length==0) { 
+	result = 'Không có giá trị trong mảng'; return result }
+else {
+	let afterSorted = arr.sort(function(a,b) {return a-b});
+	result = 'Giá trị nhỏ nhất trong mảng là: ' + arr[0];
+	return result 
+}
+}
+document.getElementById('outputSortedArray1').innerHTML = sortArray(arr1) + '<br>';
+document.getElementById('outputSortedArray1').innerHTML += sortArray(arr2)+ '<br>';
+document.getElementById('outputSortedArray1').innerHTML += sortArray(arr3)+ '<br>';
+document.getElementById('outputSortedArray1').innerHTML += sortArray(arr4)+ '<br>';
+
+//Cách 2: Dùng vòng lặp
+let result='';
+function findMin(arr) {
+	if(arr.length==0) { 
+	result = 'Không có giá trị trong mảng'; return result }
+else {
+	let Min = arr[0];
+	for(let i =1; i<arr.length;i++) {
+		if(arr[i] < Min) {Min = arr[i];}
+	}  result = 'Giá trị nhỏ nhất trong mảng là: ' + Min;};
+	return result;
+}
+document.getElementById('outputSortedArray2').innerHTML = findMin(arr1) + '<br>';
+document.getElementById('outputSortedArray2').innerHTML += findMin(arr2) + '<br>';
+document.getElementById('outputSortedArray2').innerHTML += findMin(arr3)+ '<br>';
+document.getElementById('outputSortedArray2').innerHTML += findMin(arr4)+ '<br>';
+</script>
+
