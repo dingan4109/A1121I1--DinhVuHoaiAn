@@ -24,12 +24,22 @@
 //Feet to meter	
 function feetToMeter () {
 	inputFeet = document.getElementById('inputFeet').value;
-	document.getElementById('showResult').innerHTML = 'Meter = ' + (0.305*inputFeet).toFixed(2);
+	document.getElementById('showResult').innerHTML = toMeter(inputFeet);
+	document.getElementById('inputFeet').value = '';
 }
 //Meter to feet
 function meterToFeet () {
 	inputMeter = document.getElementById('inputMeter').value;
-	document.getElementById('showResult2').innerHTML = 'Feet = ' + (3.279*inputMeter).toFixed(2);
+	document.getElementById('showResult2').innerHTML = toFeet(inputMeter);
+	document.getElementById('inputMeter').value = '';
 }
 
+function toMeter(feet) {
+meter = 0.305*feet;
+return meter
+}
+function toFeet(meter) {
+	feet = 3.279*meter;
+	return feet
+}
 </script>
