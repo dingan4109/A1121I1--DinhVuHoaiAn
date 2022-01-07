@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[Bài tập] Luyện tập tạo và sử dụng hàm 02</title>
+</head>
+<body>
+
+</html>
+<script type="text/javascript">
+//Bài 1: Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.
+function squareRoof(x) {
+	x = Math.pow(x,2);
+	return x
+}
+let input = parseInt(prompt('Nhập số tính bình phương'));
+let result = squareRoof(input);
+console.log(result);
+
+//Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được
+function findCircleArea(radius) {
+	circleArea = Math.pow(radius,2)*3,14;
+	return circleArea
+}
+function findCirclePerimeter(radius) {
+	circlePerimeter = radius*2*3.14;
+	return circlePerimeter
+}
+let inputRadius = parseInt(prompt('Nhập bán kính'));
+let Area = findCircleArea(inputRadius);
+let Perimeter = findCirclePerimeter(inputRadius);
+console.log('Diện tích hình tròn = ' + Area + '<br> Chu vi hình tròn = ' + Perimeter);
+
+// Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.
+function findFactorical(N) {
+	let n1 = 1;
+	let nFactorical; 
+	for(i=1;i<=N;i++) {
+		if(N==0) {nFactorical = 1}
+		else {
+			nFactorical = n1*i;
+			n1 = nFactorical;
+		}
+	} return nFactorical;
+} 
+let inputN = parseInt(prompt('Nhập số nguyên tính giai thừa'));
+let result = findFactorical(inputN);
+console.log(result);
+
+// Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true, ngược lại trả về false.
+function checkNumber(x) {
+	if(isNaN(x)) {return false}
+		else {return true}
+}
+let inputNumber = prompt('Nhập số');
+let result = checkNumber(inputNumber);
+console.log(result);
+
+// Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.
+function findMin(a,b,c) {
+	if(a<b && a<c) {return a+ ' là số nhỏ nhất'}
+		else if(b<a && b<c) {return b + ' là số nhỏ nhất'}
+			else {return c + ' là số nhỏ nhất'}
+}
+let a = parseInt(prompt('Nhập a'));
+let b = parseInt(prompt('Nhập b'));
+let c = parseInt(prompt('Nhập c'));
+let result = findMin(a,b,c);
+console.log(result);
+
+// Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không. Nếu là nguyên dương trả về true, ngược lại trả về false.
+/*Dùng Number.isInteger() method*/
+function checkPositiveInt(x) {
+	if(Number.isInteger(x) & x>=0) {return x + ' là số nguyên dương'}
+		else {return x+ ' không phải là số nguyên dương'}
+}
+let inputX = prompt('Nhập số kiểm tra');
+let result = checkInt(inputX);
+console.log(result);
+
+/*Nested function*/
+function checkPositiveInt(x) {
+let isInt = function(x) { 
+//loại trừ case String, case '' rỗng, case thập phân 
+//(source: https://stackoverflow.com/questions/3885817/how-do-i-check-that-a-number-is-float-or-integer)
+    return x != "" && !isNaN(x) && Math.round(x) == x;
+ } 
+ if(x>=0 && isInt(x)) {return x + ' là số nguyên dương'}
+ 	else {return x+ ' không phải số nguyên dương'};
+}
+
+let inputX = prompt('Nhập số kiểm tra');
+let result = checkPositiveInt(inputX);
+console.log(result);
+
+// Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.
+/*Cách 1*/
+function swapPosition(a,b) {
+	let temp = a;
+	a = b;
+	b = temp;
+	// return b + ' & ' + a;
+}
+let a = prompt('Nhập a');
+let b = prompt('Nhập b');
+let result = swapPosition(a,b);
+console.log(result);
+/*Cách 2: Using array - làm thử tham khảo thôi chứ vẫn nên xài cách 1 nhỉ, cho nó lẹ*/
+function swapPosition(a,b) {
+	let myArr = [];
+	myArr.push(a,b);
+	myArr[0] = b;
+	myArr[1] = a;
+	return myArr.join();
+}
+let a = prompt('Nhập a');
+let b = prompt('Nhập b');
+let result = swapPosition(a,b);
+console.log(result);
+
+// Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.
+function reverseArrar (arr) {
+	return arr.reverse().join();
+}
+let arrLength = parseInt(prompt('Nhập số lượng phần tử số nguyên'));
+let nArr = [];
+for(i=0;i<=arrLength;i++) {
+	let n = prompt('Nhập phần tử');
+	nArr.push(n);
+}
+let newArr = reverseArrar(nArr);
+console.log(newArr)
+
+// Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không. Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1. 
+function findElement(arr, x) {
+			let check = 0;
+			for(i=0;i<=arr.length;i++) {
+				if(arr[i] == x) check +=1;
+			} 		
+		if (check !=0) {return 'Số lần ' + x + ' xuất hiện trong mảng là ' + check;
+		} else {return -1 } //return x + ' không thuộc mảng ký tự'
+}
+
+let arrLength = parseInt(prompt('Nhập số lượng ký tự của mảng'));
+let elementArr = [];
+for(i=0;i<=arrLength;i++) {
+	let element = prompt('Nhập ký tự của mảng');
+	elementArr.push(element);
+}
+console.log(elementArr);
+
+let x = prompt('Nhập ký tự cần tìm');
+let result = findElement(elementArr, x);
+console.log(result);
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[Bài tập] Chuyển đổi giữa feet và meters</title>
+</head>
+<body>
+<!-- Giao diện 1 -->
+<form action="#" method="get">
+	<label for="inputFeet">Nhập feet</label><br>
+	<input type="number" id="inputFeet"><br>
+	<button type="button" onclick="feetToMeter()">Chuyển sang meter</button>
+</form>
+<p id="showResult"></p>
+<br><br>
+<!-- Giao diện 2 -->
+<form action="#" method="get">
+	<label for="inputMeter">Nhập meter</label><br>
+	<input type="number" id="inputMeter"><br>
+	<button type="button" onclick="meterToFeet()">Chuyển sang feet</button>
+</form>
+<p id="showResult2"></p>
+</html>
+<script type="text/javascript">
+//Feet to meter	
+function feetToMeter () {
+	inputFeet = document.getElementById('inputFeet').value;
+	document.getElementById('showResult').innerHTML = 'Meter = ' + (0.305*inputFeet).toFixed(2);
+}
+//Meter to feet
+function meterToFeet () {
+	inputMeter = document.getElementById('inputMeter').value;
+	document.getElementById('showResult2').innerHTML = 'Feet = ' + (3.279*inputMeter).toFixed(2);
+}
+
+</script>

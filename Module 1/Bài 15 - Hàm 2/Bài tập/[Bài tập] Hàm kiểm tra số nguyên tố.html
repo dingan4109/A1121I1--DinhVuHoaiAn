@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[Bài tập] Hàm kiểm tra số nguyên tố</title>
+</head>
+<body>
+<!-- Giao diện 1 -->
+<form action="#" method="get">
+	<label for="inputNum">Nhập số cần kiểm tra</label>
+	<input type="number" id="inputNum"><br><br>
+	<button type="button" onclick="isPrime()">Kiểm tra số nguyên tố</button>	
+</form>
+<p id="showResult"></p>
+
+<!-- Giao diện 2 -->
+<form action="#" method="get">
+	<label for="inputNum2">Nhập giới hạn in các số nguyên tố</label>
+	<input type="number" id="inputNum2"><br><br>
+	<button type="button" onclick="printPrime()">In kết quả</button>	
+</form>
+<p id="showResult2"></p>
+</body>
+</html>
+<script type="text/javascript">
+// Kiểm tra một số nguyên bất kỳ có phải là số nguyên tố hay không?	
+	function isPrime() {
+	inputNum= document.getElementById('inputNum').value;
+	let check = 0;
+	let result = '';
+	if(inputNum<2) {result = inputNum + ' không phải là số nguyên tố';
+	} else {
+			for(let i=1;i<=inputNum;i++) {
+				if(inputNum%i==0) {check +=1};
+				if (check > 3) {break;}
+			} if (check == 2) {result = inputNum + ' là số nguyên tố'; 
+				}else {
+					result = inputNum + ' không phải là số nguyên tố';	
+				}
+		}	document.getElementById('showResult').innerHTML = result;
+	}
+
+// Tìm tất cả các số nguyên tố nhỏ hơn số user input
+function printPrime(inputNum2) {
+let inputNum2 = document.getElementById('inputNum2').value;
+let i = 2;
+let check;
+
+while(i<inputNum2) {
+    check=0;
+    for(let j = 1;j<=i;j++) {
+        if(i%j==0) {check+=1};
+        if(check > 3) {break;}}
+        if(check==2) {document.getElementById('showResult2').innerHTML += i + '<br>';};
+      	i++}	
+}
+</script>
