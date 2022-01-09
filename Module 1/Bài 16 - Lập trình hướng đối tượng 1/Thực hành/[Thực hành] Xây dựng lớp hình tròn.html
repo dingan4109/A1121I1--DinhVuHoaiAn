@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[Thực hành] Xây dựng lớp hình tròn</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	let Circle = function (radius,color) {
+		this.radius = radius;
+		this.color = color;
+		this.getRadius = function() {
+			return this.radius
+		}
+		this.getArea = function() {
+			return this.radius*this.radius*Math.PI
+		}
+	}
+
+	//SỬ DỤNG TỪ KHÓA CLASS & CONSTRUCTOR
+	class Circle {
+		constructor(radius,color) {
+			this.radius = radius;
+			this.color = color;
+		}
+		getRadius() {
+			return this.radius
+		}
+		getArea() {
+			return this.radius*this.radius*Math.PI
+		}
+	}
+
+	let circle = new Circle(12,'blue');
+	let radius = circle.getRadius();
+	console.log(radius)
+	let Area = circle.getArea();
+	console.log(Area.toFixed(2))
+</script>
+
+
