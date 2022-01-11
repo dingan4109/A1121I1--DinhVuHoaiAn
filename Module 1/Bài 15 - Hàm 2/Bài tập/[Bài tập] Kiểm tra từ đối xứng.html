@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[Bài tập] Kiểm tra từ đối xứng</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+//Cách 1:
+function isPalindrome(string) {
+	let n = string.length-1;
+	for(i=0;i<=n;i++) {
+		 if(string[i] != string[n]) 
+		 	return false;
+		 	n--;
+	} return true;
+}
+let string = prompt('Nhập chuỗi kiểm tra');
+let result = isPalindrome(string);
+console.log(result);
+// Cách 2: Đệ quy
+function isPalindrome(string) {
+	let n = string.length-1;
+	let n1;
+	for(i=0;i<=n;i++) {
+		 if(string[i] != string[n]) 
+		 	return false;
+		 	n1=n-1;
+		 	n=n1;
+	} return true;
+}
+let string = prompt('Nhập chuỗi kiểm tra');
+let result = isPalindrome(string);
+console.log(result);
+</script>
