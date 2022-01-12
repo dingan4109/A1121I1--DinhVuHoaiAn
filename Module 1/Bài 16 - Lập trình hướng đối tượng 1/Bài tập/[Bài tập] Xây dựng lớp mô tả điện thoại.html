@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[Bài tập] Xây dựng lớp mô tả điện thoại</title>
+	<style type="text/css">
+	</style>
+</head>
+<body>
+</body>
+</html>
+<script type="text/javascript">
+	class Mobile {
+		constructor (name) {
+			this.name = name;
+			this.message = '';
+			this.inbox = [];
+			this.sentInbox = [];
+		}
+		
+		setpinPercent(pinPercent) {
+			this.pinPercent = pinPercent
+		}
+		getPinPercen() {
+			return this.pinPercent;
+		}
+		//Chức năng lưu tin nhắn đang soạn thảo
+		savingMessage(...char) {
+			let savingMessage = '';
+			savingMessage += char;
+			this.pinPercent--;
+			return savingMessage;
+		}
+		//Chức năng lưu tin nhắn vào hộp thư đến
+		storeMessage(message) {
+			if(this.status) {
+				this.inbox.push(message);
+				this.pinPercent--;
+			}
+		}
+		//Chức năng lưu tin nhắn đã gửi
+		storeSentMessage(message) {
+			if(this.status) {
+				this.sentInbox.push(message);
+				this.pinPercent--;	
+			}
+		}
+		//Chức năng bật và tắt điện thoại
+		turnOn () {
+			this.status = true
+		}
+		turnOff() {
+			this.status = false
+		}
+		//Chức năng kiểm tra điện thoại đang bật hay tắt
+		checkOnOff(){
+			if(this.status) alert('On')
+				else alert('Off')
+		}
+		//Chức năng soạn tin nhắn
+		writeMessage(inputMessage) {
+			if(this.status) {
+				this.message = inputMessage;
+				this.pinPercent--;
+				return this.message	
+			}	
+		}
+		//Chức năng nhận tin nhắn
+		receiveMessage(mobile) {
+			if(this.status) {
+				this.message = this.inbox[this.inbox.length-1];
+				this.pinPercent--;
+				return mobile.name + ' says: ' + this.message;
+			}
+		}
+		//Chức năng gửi tin nhắn
+		sentMessage(mobile,message) {
+			if(this.status) {
+				mobile.inbox.push(message);
+				this.storeSentMessage(message);
+			}
+		}
+		//Chức năng xem tin nhắn trong hộp thư đến
+		//Chức năng xem tin nhắn đã gửi
+		reviewSentMessage(sentInbox) {
+			this.pinPercent--;
+			for(let i = 0; i < sentInbox.length;i++)
+			return this.sentInbox[i]
+		}
+		/*
+		Sau mỗi lần sử dụng một chức năng, năng lượng pin sẽ giảm đi một đơn vị.
+		Các chức năng không thể hoạt động nếu điện thoại chưa bật.
+		*/
+
+	}
+	let mobile1 = new Mobile('Iphone');
+	let mobile2 = new Mobile('Samsung');
+	//let inputReceiver = prompt('Input receiver, pls');
+	let inputMess = prompt('Input message, pls');
+	mobile1.setpinPercent(100);
+	mobile2.setpinPercent(100);
+	mobile1.turnOn();
+	mobile2.turnOn();
+
+	mobile1.sentMessage(mobile2,inputMess);
+	let getMess1 = mobile2.receiveMessage(mobile1);
+	console.log(getMess1);
+
+	let checkPin = mobile1.getPinPercen();
+	console.log(checkPin)
+	let checkPin2 = mobile2.getPinPercen();
+	console.log(checkPin2)
+</script>

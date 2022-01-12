@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[Bài tập] Xây dựng lớp mô tả Temperature</title>
+</head>
+<body>
+</body>
+</html>
+<script type="text/javascript">
+	class Temperature {
+		constructor (tempt) {
+			this.tempt = tempt;
+		}
+		fromCtoF(result) {
+			result = this.tempt*1.8+32;
+			return 'F = ' + result;
+		}
+		fromCtoKelvin(result) {
+			result = this.tempt+273.15;;
+			return 'Kelvin = ' + result;
+		}
+	}
+	let cTempt = new Temperature(25);
+	let F = cTempt.fromCtoF();
+	console.log(F);
+	let K = cTempt.fromCtoKelvin();
+	console.log(K);
+</script>

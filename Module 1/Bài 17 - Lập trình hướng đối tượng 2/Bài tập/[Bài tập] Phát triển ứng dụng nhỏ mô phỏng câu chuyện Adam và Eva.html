@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>[Bài tập] Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+class Apple {
+	constructor (weight) {
+		this.weight = weight;
+	}
+	decrease() {
+		this.weight--
+	}
+	getWeight() {
+		if(this.weight>0) return this.weight
+			else return 'No more apple'
+	}
+	isEmpty() {
+		if(this.weight==0) return 'Empty';
+	}
+}	
+class Human {
+	constructor(name) {
+		this.name = name;
+	}
+	setWeight (weight) {
+		this.weight = weight
+	}
+	setGender (gender) {
+		//true: Female - false: Male
+		this.gender = gender
+	}
+	isMale() {
+		if(this.gender==false) alert('Male')
+			else alert('Not a male')
+	}
+	speak(sentence) {
+		return this.name + ' say ' + sentence
+	} 
+	eat(apple) {
+		if(apple.weight>0) {
+			this.weight++;
+			apple.weight--;
+		}else alert('No more apple');
+	}
+	checkAppleWeight (apple) {
+		return 'The apple\'s weight is ' + apple.weight
+	}
+}
+
+let apple = new Apple(2);
+let adam = new Human('Adam');
+	adam.setGender(false);
+let eva = new Human('Eva');
+	eva.setGender(true)
+
+//speaking
+let adamSpeak = adam.speak('My name is Adam')
+console.log(adamSpeak);
+let evaSpeak = eva.speak('My name is Eva')
+console.log(evaSpeak);
+adam.eat(apple);
+let w1 = apple.getWeight();
+console.log(w1);
+eva.eat(apple);
+let w2 = apple.getWeight();
+console.log(w2);
+adam.eat(apple);
+adam.isMale();
+eva.isMale();
+
+</script>
