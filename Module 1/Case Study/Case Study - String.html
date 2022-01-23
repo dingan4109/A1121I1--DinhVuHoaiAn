@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Case Study</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+//IV: STRING
+
+//Bài 1: Viết một hàm chuẩn hóa xâu ký tự & In ra từ dài nhất
+function findTheLongest(string) {
+let stringArr = string.split(' ');
+let index;
+let max = stringArr[0].length;
+//Tìm từ dài nhất có bao nhiêu ký tự
+for(let i = 1; i<stringArr.length;i++) {
+	if(stringArr[i].length > max) 
+		max = stringArr[i].length;
+	}
+//Tìm xem có bao nhiêu từ cùng số lượng ký tự giống từ dài nhất	
+for(let i = 0; i<stringArr.length;i++) {
+	if(stringArr[i].length == max) 
+		document.write(stringArr[i] + '<br>');		
+}
+}
+//hàm chuẩn hóa xâu ký tự
+function getStandard(string) {
+let ip = string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+let ipArr = ip.split('');
+for(let i=0;i<ipArr.length;i++) {
+//loại bỏ khoảng trắng thừa
+if(ipArr[i]== " " && ipArr[i+1]== " ")
+ipArr.splice(i,1);
+//viết in hoa chữ cái đầu từ
+if(ipArr[i]== ' ') 
+ipArr[i+1] = ipArr[i+1].toUpperCase();
+}
+let result = ipArr.join('');
+document.write(result + '<br>')
+findTheLongest(result);
+}
+let inputString = 'tRaN  coNg  Hai  ngUyEN nGhien';
+getStandard(inputString);
+
+//Bài 2: Cho xâu kí tự. Hãy đếm số lượng kí tự khác nhau trong xâu đó
+function differentSymbolsNaive(input) {
+	let string = input.split('').sort();
+	let count = 0;
+	for(let i =0;i<string.length;i++) {
+		 if(string[i]!=string[i+1]) {
+		 	count+=1;
+		 	 continue;
+		 }else continue;
+	} 	return count;
+}
+let input = 'hellobaby';
+let check = differentSymbolsNaive(input);
+console.log(check);
+
+// Bài 3: Cho hai xâu kí tự, tìm số lượng kí tự chung giữa chúng.
+//Cách 1: Tính bao gồm các ký tự lặp lại
+function commonCharCount(string1,string2) {
+let	s1 = string1.split('');
+let	s2 = string2.split('');
+let count =0;
+for(let i =0; i<s1.length;i++) {
+	for( let j =0;j<s2.length;j++) {
+		if(s1[i]==s2[j]) {
+			s2.splice(j,1);
+			count +=1;
+			break;
+		}
+	}
+} return count;
+	
+}
+
+let string1 = 'aabcc';
+let string2 = 'adcaa';
+let check = commonCharCount(string1,string2);
+console.log(check);
+
+//Cách 2: Tính không bao gồm các ký tự lặp lại
+//Xuất ra mảng chứa các ký tự khác nhau trong chuỗi (để loại bỏ các phần tử lặp)
+function differentSymbolsNaive(input) {
+	let string = input.split('').sort();
+	let charArr = [];
+	for(let i =0;i<string.length;i++) {
+		 if(string[i]!=string[i+1]) {
+		 	charArr.push(string[i]);
+		 	 continue;
+		 }else continue;
+	} 	return charArr;
+}
+//Tìm các ký tự chung giữa 2 chuỗi
+function commonCharCount(s1,s2) {
+let count =0;
+let combineString = s1.concat(s2);
+let string = differentSymbolsNaive(combineString);
+for(let i =0; i<string.length;i++) {
+	if(s1.includes(string[i]) && s2.includes(string[i])) {count +=1}
+} return count
+}
+
+let string1 = 'aabcc';
+let string2 = 'adcaa';
+let check = commonCharCount(string1,string2);
+console.log(check);
+</script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Case Study</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+//I: VẼ HÌNH
+//Bài 1: Vẽ hình chữ nhật rỗng chiều dài n và chiều rộng m
+for(let chieurong = 1; chieurong<=4;chieurong++) {
+	for(let chieudai = 1; chieudai<=5;chieudai++) {
+		if(chieurong==1 || chieurong ==4 || chieudai == 1 || chieudai==5) document.write('*')
+			else document.write('&nbsp&nbsp')
+	} document.write("<br>");
+}
+
+
+//Bài 2: Vẽ tam giác vuông cân rỗng có chiều cao h=5
+let symbol = ''
+for(let i =1;i<=5;i++) {
+	document.write('*')
+	for(let j = 1;j<i;j++) {
+		if(i==3&&j==1 || i==4 && j==1 || i==4 && j==2) document.write('&nbsp&nbsp')
+			else document.write('*')
+		} document.write('<br>')
+}
+//OR:
+for(let i = 1; i<=5;i++) {
+	for(let j = 1; j<=i;j++) {
+		if(i==1 || i ==5 || j == 1 || j==i) document.write('*')
+			else document.write('&nbsp&nbsp')
+	} document.write("<br>");
+}
+
+//Bài 3: Vẽ tam giác cân đặc có chiều cao h = 5
+
+// Bài 4: Vẽ tam giác cân rỗng có chiều cao h =5
+
+
+</script>

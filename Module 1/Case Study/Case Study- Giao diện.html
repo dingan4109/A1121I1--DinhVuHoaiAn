@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#main {	width: 100%;
+				height: 700px;
+				background: white;
+		}
+		#div1 {	width: 100%;
+				height: 20%;
+				border: 2px solid black;
+		}
+		#div2 {	width: 100%;
+				height: 80%;
+				border: 2px solid black;
+		}
+		#div1 > .div_G {	width: 30%;
+							height: 100%;
+							float: left;
+		}
+		#div1 > .div_char {	width: 70%;
+							height: 100%;
+							float: left;
+							line-height: 100px;
+  							text-align: center;
+  							font-family: Verdana;
+  							font-size: 20px;
+  							font-weight: bold;
+		}
+		#div2 > .left {	width: 20%;
+						height: 99%;
+						float: left;
+						border: 2px solid black;
+						text-align: center;
+						position: relative; 
+		}
+		.div_select {	position: absolute;
+						margin-top: 40px;
+						margin: 50px;
+						align-items: center;
+		}
+		select {margin:25px;
+				vertical-align: middle;
+		}
+
+	</style>
+</head>
+<body>
+<div id="main">
+	<div id="div1">
+		<div class="div_G">
+			<canvas id="canvasG"></canvas>
+		</div>
+		<div class="div_char">
+		<p>Hệ thống quản lý bài tập Casestudy module 1</p>
+		</div>
+	</div>
+	<div id="div2">
+		<div class="left">
+			<div class="div_select">
+				<div>
+					<select><option>Bài tập 1</option></select>
+				</div>
+				<div>
+					<select><option>Bài tập 2</option></select>
+				</div>
+				<div>
+					<select><option>Bài tập 3</option></select>
+				</div>
+				<div>
+					<select><option>Bài tập 4</option></select>
+				</div>
+				<div>
+					<select><option>Bài tập 5</option></select>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
+<script type="text/javascript">
+	let textG = document.getElementById('canvasG').getContext('2d');
+	textG.font = '100px Verdana';
+	textG.fillText('G',50, 100);
+</script>

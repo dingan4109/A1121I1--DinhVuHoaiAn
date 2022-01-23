@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Case Study</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+//II: IF VÀ SWITCH CASE
+
+//Bài 1: Bài 1: Viết một chương trình để nhập lương nhân viên, tính thuế thu nhập và lương ròng
+let inputSalary = parseInt(prompt('Input Salary'));
+let netSalary;
+let tax;
+
+if(inputSalary<7000000) {
+	tax = inputSalary*0.05; netSalary = inputSalary - tax
+} else if (inputSalary < 15000000) {
+	tax = inputSalary*0.1; netSalary = inputSalary - tax
+} else {
+	tax = inputSalary*0.2; netSalary = inputSalary - tax
+}
+document.write('Tax = ' + tax.toLocaleString() + '<br> netSalary = ' + netSalary.toLocaleString())
+
+//Bài 2: Viết chương trình kiểm tra một ký tự trong bảng chữ cái tiếng anh là nguyên âm (vowels) hay phụ âm (consonants).
+
+//If-else
+let inputChar = prompt('Input Character');
+let vowelsArr = ['o', 'u', 'i', 'a', 'e', 'O', 'U', 'I', 'A', 'E']
+
+if(vowelsArr.includes(inputChar)) document.write(inputChar + ' is vowel')
+	else document.write(inputChar + ' is consonant')
+
+//Switch Case
+let inputChar = prompt('Input Character');
+let vowelsArr = ['o', 'u', 'i', 'a', 'e', 'O', 'U', 'I', 'A', 'E']
+let check = vowelsArr.includes(inputChar);
+switch(check){
+	case true:
+		document.write(inputChar + ' is vowel');
+		break;
+	default:
+		document.write(inputChar + ' is consonant');
+}
+
+</script>
